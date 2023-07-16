@@ -13,7 +13,15 @@
     font-family: "JetBrains Mono", monospace;
 }
 
+body,
+header,
+footer {
+    transition: .8s ease-out;
+}
+
 :root {
+    --black: #111;
+    --offwhite: #cfcfcf;
     --white: #fff;
     --darktext: #222;
     --lighttext: #777;
@@ -21,14 +29,21 @@
     --darkgray: #d9d9d9
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--lighttext);
+}
+
 h1 {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
 header {
     color: var(--darktext);
-    margin: 2rem;
+    margin: 1rem 2rem;
     display: flex;
     justify-content: space-between;
 }
@@ -46,15 +61,16 @@ header button {
 }
 
 .btn-idle {
-    background-color: transparent;
-    border: 2px solid var(--lightgray);
-}
-
-btn-idle:hover {
     background-color: var(--lightgray);
+    border: 1px solid var(--lightgray);
 }
 
-btn-idle:active {
+.btn-idle:hover {
+    background-color: var(--lightgray);
+    border: 1px solid var(--darkgray);
+}
+
+.btn-idle:active {
     background-color: var(--darkgray);
     border: 2px solid var(--darkgray);
 }
@@ -78,29 +94,66 @@ btn-idle:active {
 
 .intro {
     max-width: 40rem;
-    margin: 0 auto;
+    margin: 4rem auto;
+    animation: fade-in 1.5s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .intro p {
-    color: var(--lighttext);
-    text-align: center;
+    color: var(--darktext);
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 145%;
 }
 
 .intro #message {
-    display: flex;
-    padding: 3rem 1rem;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
+    padding: 1rem 0rem 0 0;
 }
 
+.intro a:hover {
+    color: var(--darktext);
+}
+
+#squiggle {
+    border: 1px solid var(--lightgray);
+    cursor: none;
+    border-radius: 1.2rem;
+    overflow: hidden;
+
+}
+
+#squiggle:hover {
+    transition: 0.2s;
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(190deg) brightness(90%) contrast(97%);
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 50%;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 50%;
+    }
+}
 
 footer {
-    font-size: .5rem;
+    font-size: .6rem;
     position: fixed;
     bottom: 1rem;
     left: 0;
@@ -110,12 +163,16 @@ footer {
 }
 
 footer a:hover {
-    color: var(--lighttext);
+    color: var(--darktext);
 }
 
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 840px) {
     header {
-        margin: 1rem;
+        margin: 1rem 1rem;
+    }
+
+    .intro {
+        margin: 4rem 1rem;
     }
 }

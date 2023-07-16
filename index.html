@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Moritz Kuhn</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <div>
-        <h1>Moritz Kuhn</h1>
-        </div>
-      <button class="btn-idle" onclick="copy()" id="copy" type="button" title="Copy hello@moritzkuhn.com 💌">E-Mail</button>
-    </header>
-    <section class="intro">
-        <div id="message">
-          <p>
-            I'm a designer and developer fascinated by people, technology, algorithms and the intersection of these things. With my work I aim for solutions that respect and add value to the environment they live in.
-          </p>
-        </div>
-    </section>
-    <footer><a href="https://www.moritzkuhn.com/imprint" target="_blank" title="Legal imprint 👨🏻‍⚖️">Imprint</a></footer>
-	<script src="index.js"></script>
-  </body>
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#111111">
+  <meta name="msapplication-TileColor" content="#111111">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Moritz Kuhn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Moritz Kuhn</h1>
+    </div>
+    <button class="btn-idle" onclick="copy()" id="copy" type="button" title="Copy hello@moritzkuhn.com">Email</button>
+  </header>
+  <section class="intro">
+    <div id="squiggle">
+      <lottie-player loop="true" mode="normal" class="lottie" id="lottie-container"
+        src="assets/lottie/img/process.json"></lottie-player>
+    </div>
+    <div id="message">
+      <p id="message-content">
+        The Design Squiggle is a simple illustration of the design process. The journey of researching, uncovering
+        insights, generating creative concepts, iteration of prototypes and eventually concluding in one single designed
+        solution. It is intended to convey the feeling of the journey. Beginning on the left with mess and uncertainty
+        and ending on the right in a single point of focus: the design.
+        <br><br>
+        <a href="https://thedesignsquiggle.com/" title="Read more" target="_blank">– Damien Newman</a>
+      </p>
+
+    </div>
+  </section>
+  <footer>
+    <a href="https://www.moritzkuhn.com/imprint" target="_blank" title="Legal imprint">Imprint</a>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
