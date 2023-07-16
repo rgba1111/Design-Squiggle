@@ -189,11 +189,11 @@ footer a:hover {
 @media only screen and (max-width: 840px) {
 
     header {
-        margin: 1rem 2rem;
+        margin: 2rem 1rem;
     }
 
     .intro {
         margin: 2rem auto;
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 }
