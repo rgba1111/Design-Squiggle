@@ -28,7 +28,7 @@ h1 {
 
 header {
     color: var(--darktext);
-    margin: 3rem;
+    margin: 2rem;
     display: flex;
     justify-content: space-between;
 }
