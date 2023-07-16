@@ -45,7 +45,7 @@ LottieInteractivity.create({
     {
       state: "loop",
       transition: "hover",
-      frames: [0, 243],
+      frames: [0, 238],
       reset: true,
     },
     {
@@ -55,7 +55,7 @@ LottieInteractivity.create({
         y: [-1, 2],
       },
       transition: "seek",
-      frames: [0, 243],
+      frames: [0, 238],
       reset: true,
     },
   ],
