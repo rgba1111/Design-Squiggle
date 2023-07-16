@@ -1,13 +1,23 @@
+const elem = document.getElementById("copy");
+let wait = false;
+
 function copy() {
-  var copyText = "hello@moritzkuhn.com";
+  const copyText = "hello@moritzkuhn.com";
   navigator.clipboard.writeText(copyText);
 
-  var elem = document.getElementById("copy");
-  elem.innerHTML = "Copied!";
-  elem.classList.toggle("invert");
+  if (!wait) {
+    elem.innerHTML = "Copied!";
+    elem.classList.add("btn-active");
+    wait = true;
 
-  setTimeout(() => {
-    elem.innerHTML = "E-Mail";
-    elem.classList.toggle("invert");
-  }, "3000");
+    setTimeout(() => {
+      resetButton();
+    }, 3000);
+  }
+}
+
+function resetButton() {
+  elem.innerHTML = "E-Mail";
+  elem.classList.remove("btn-active");
+  wait = false;
 }
