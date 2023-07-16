@@ -1,0 +1,31 @@
+ @font-face { font-family: JetBrains Mono; src: url('assets/fonts/JetBrainsMono-Regular.ttf'); } 
+
+ @font-face { font-family: JetBrains Mono; font-weight: bold; src: url('assets/fonts/JetBrainsMono-Bold.ttf');}
+
+
+*{
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h1{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+header{
+    margin: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header button {
+    color: #222;
+    font-family: JetBrains Mono;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    background-color: transparent;
+    border: 0;
+}
