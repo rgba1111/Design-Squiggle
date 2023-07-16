@@ -11,6 +11,8 @@
 
 * {
     font-family: "JetBrains Mono", monospace;
+    margin-block-end: 0;
+    margin-block-start: 0;
 }
 
 body,
@@ -48,81 +50,6 @@ header {
     justify-content: space-between;
 }
 
-header button {
-    width: 6rem;
-    border-radius: 0.45rem;
-    padding: 0.25rem 0.75rem;
-    transition: .3s all ease-out;
-    font-weight: 500;
-    font-size: 0.875rem;
-    font-style: normal;
-    line-height: normal;
-    cursor: pointer;
-}
-
-.btn-idle {
-    background-color: var(--lightgray);
-    border: 1px solid var(--lightgray);
-}
-
-.btn-idle:hover {
-    background-color: var(--lightgray);
-    border: 1px solid var(--darkgray);
-}
-
-.btn-idle:active {
-    background-color: var(--darkgray);
-    border: 2px solid var(--darkgray);
-}
-
-
-.btn-active {
-    transition: .3s all ease-out;
-    background-color: var(--darktext) !important;
-    color: var(--white) !important;
-}
-
-.btn-active:hover {
-    background-color: var(--darktext) !important;
-    color: var(--white) !important;
-}
-
-.btn-active:active {
-    background-color: var(--darktext) !important;
-    color: var(--white) !important;
-}
-
-.intro {
-    max-width: 40rem;
-    margin: 4rem auto;
-    animation: fade-in 1.5s ease-out;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.intro p {
-    color: var(--darktext);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 145%;
-}
-
-.intro #message {
-    padding: 1rem 0rem 0 0;
-}
-
-.intro a:hover {
-    color: var(--darktext);
-}
 
 #squiggle {
     border: 1px solid var(--lightgray);
@@ -152,6 +79,97 @@ header button {
     }
 }
 
+
+.toggle {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.toggle+label {
+    --toggle-color: var(--white);
+    --toggle-bg-color: var(--darkgray);
+    position: relative;
+    padding-left: 3.25rem;
+    line-height: 24px;
+    cursor: pointer;
+    transition: all .33s ease-out;
+    font-size: 0.875rem;
+}
+
+.toggle+label:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 24px;
+    border-radius: 1.25rem;
+    background-color: var(--toggle-bg-color);
+}
+
+.toggle+label:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 1px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    margin: auto;
+    transform: translate(0, 0);
+    border-radius: 50%;
+    background-color: var(--toggle-color);
+    cursor: pointer;
+    transition: transform 200ms;
+}
+
+.toggle:checked+label {
+    --toggle-bg-color: var(--black);
+}
+
+.toggle:checked+label:after {
+    transform: translate(16px, 0);
+}
+
+
+.intro {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    max-width: 40rem;
+    margin: 3rem auto;
+    animation: fade-in 1.2s ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.intro p {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+}
+
+
+.intro #message {
+    padding: 0;
+}
+
+.intro a:hover {
+    color: var(--darktext);
+}
+
 footer {
     font-size: .6rem;
     position: fixed;
@@ -160,12 +178,13 @@ footer {
     right: 0;
     display: flex;
     justify-content: center;
+    display: flex;
+    gap: 2rem;
 }
 
 footer a:hover {
     color: var(--darktext);
 }
-
 
 @media only screen and (max-width: 840px) {
     header {
@@ -173,6 +192,7 @@ footer a:hover {
     }
 
     .intro {
-        margin: 4rem 1rem;
+        margin: 4rem auto;
+        padding: 0 1rem;
     }
 }

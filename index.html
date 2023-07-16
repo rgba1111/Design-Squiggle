@@ -13,14 +13,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Moritz Kuhn</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
   <header>
     <div>
-      <h1>Moritz Kuhn</h1>
+      <h1>The Design Squiggle</h1>
     </div>
-    <button class="btn-idle" onclick="copy()" id="copy" type="button" title="Copy hello@moritzkuhn.com">Email</button>
+    <div class="sound-controls">
+      <input onclick="toggle(this)" type="checkbox" class="toggle" name="sound-toggle" id="sound-toggle" />
+      <label for="sound-toggle">Sound</label>
+    </div>
   </header>
   <section class="intro">
     <div id="squiggle">
@@ -36,10 +40,10 @@
         <br><br>
         <a href="https://thedesignsquiggle.com/" title="Read more" target="_blank">– Damien Newman</a>
       </p>
-
     </div>
   </section>
   <footer>
+    <a href="https://www.moritzkuhn.com/" target="_blank" title="Moritz Kuhn">Portfolio</a>
     <a href="https://www.moritzkuhn.com/imprint" target="_blank" title="Legal imprint">Imprint</a>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js"></script>

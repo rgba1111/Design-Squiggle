@@ -1,31 +1,8 @@
-const elem = document.getElementById("copy");
-let wait = false;
-
-function copy() {
-  const copyText = "hello@moritzkuhn.com";
-  navigator.clipboard.writeText(copyText);
-
-  if (!wait) {
-    elem.innerHTML = "Copied!";
-    elem.classList.add("btn-active");
-    wait = true;
-
-    setTimeout(() => {
-      resetButton();
-    }, 3000);
-  }
-}
-
-function resetButton() {
-  elem.innerHTML = "Email";
-  elem.classList.remove("btn-active");
-  wait = false;
-}
-
 // sound set-up
-  const pause_sound = new Audio("../../content/3_about/audio/pause.wav");
-  const play_sound = new Audio("../../content/3_about/audio/play.wav");
-
+const pause_sound = new Audio("assets/lottie/audio/pause.wav");
+pause_sound.volume = 0.75;
+const play_sound = new Audio("assets/lottie/audio/play.wav");
+play_sound.volume = 0.75;
 
 // lottie set-up
 
@@ -46,7 +23,19 @@ const message_content = document.querySelector("#message-content");
 const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
-// lottie interactivity 
+// toggle state
+
+let sound_toggle = false;
+
+function toggle(checkbox) {
+  if (checkbox.checked) {
+    sound_toggle = true;
+  } else {
+    sound_toggle = false;
+  }
+}
+
+// lottie interactivity
 
 LottieInteractivity.create({
   player: "#lottie-container",
@@ -72,21 +61,31 @@ LottieInteractivity.create({
   ],
 });
 
-
-// theme switch
+// theme switch and play sounds
 
 player.addEventListener("mouseenter", function () {
   body.style.backgroundColor = "var(--black)";
   message_content.style.color = "var(--offwhite)";
+  document.documentElement.style.setProperty("--toggle-bg-color", "red");
   footer.style.opacity = "0";
   header.style.opacity = "0";
+  if (sound_toggle === true) {
+    pause_sound.play();
+    pause_sound.currentTime = 0;
+  }
 });
+
+// theme switch reverse, play sounds and play lottie again
 
 player.addEventListener("mouseleave", function () {
   body.style.backgroundColor = "var(--white)";
   message_content.style.color = "var(--black)";
   footer.style.opacity = "1";
   header.style.opacity = "1";
+  if (sound_toggle === true) {
+    play_sound.play();
+    play_sound.currentTime = 0;
+  }
   player.setDirection(1);
   player.play();
 });
