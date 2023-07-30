@@ -85,6 +85,10 @@ header {
     animation: pulse 3s infinite ease-in-out;
 }
 
+.lottie{
+    scale: 1.005;
+}
+
 @keyframes pulse {
     0% {
         opacity: 50%;
