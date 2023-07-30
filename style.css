@@ -34,7 +34,6 @@ footer {
     --lighttext: #777;
     --lightgray: #f1f1f1;
     --darkgray: #d9d9d9;
-    --bodytextsize: 0.9rem;
 }
 
 body {
@@ -57,7 +56,7 @@ h1 {
 }
 
 h2 {
-    font-size: var(--bodytextsize);;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -110,11 +109,10 @@ header {
     --toggle-color: var(--white);
     --toggle-bg-color: var(--darkgray);
     position: relative;
-    padding-left: 4rem;
+    padding-left: 3.4rem;
     line-height: 28px;
     cursor: pointer;
     transition: all .33s ease-out;
-    font-size: var(--bodytextsize);;
 }
 
 .toggle+label:before {
@@ -176,7 +174,7 @@ header {
 
 
 .textbox {
-    font-size: var(--bodytextsize);;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 400;
     line-height: 145%;
@@ -188,7 +186,7 @@ header {
 }
 
 footer {
-    font-size: var(--bodytextsize);;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 400;
     line-height: 145%;
@@ -206,8 +204,8 @@ footer {
 
 @media only screen and (max-width: 840px) {
 
-    :root {
-        --bodytextsize: 1.1rem;
+    .textbox{
+        font-size: 1rem;
     }
 
     header {
