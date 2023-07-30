@@ -74,10 +74,33 @@ player.addEventListener("mouseenter", function () {
     pause_sound.currentTime = 0;
   }
 });
+player.addEventListener("touchstart", function () {
+  body.style.backgroundColor = "var(--black)";
+  message_content.style.color = "var(--offwhite)";
+  document.documentElement.style.setProperty("--toggle-bg-color", "red");
+  footer.style.opacity = "0";
+  header.style.opacity = "0";
+  if (sound_toggle === true) {
+    pause_sound.play();
+    pause_sound.currentTime = 0;
+  }
+});
 
 // theme switch reverse, play sounds and play lottie again
 
 player.addEventListener("mouseleave", function () {
+  body.style.backgroundColor = "var(--white)";
+  message_content.style.color = "var(--black)";
+  footer.style.opacity = "1";
+  header.style.opacity = "1";
+  if (sound_toggle === true) {
+    play_sound.play();
+    play_sound.currentTime = 0;
+  }
+  player.setDirection(1);
+  player.play();
+});
+player.addEventListener("touchend", function () {
   body.style.backgroundColor = "var(--white)";
   message_content.style.color = "var(--black)";
   footer.style.opacity = "1";
