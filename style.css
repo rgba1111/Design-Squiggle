@@ -33,7 +33,8 @@ footer {
     --darktext: #222;
     --lighttext: #777;
     --lightgray: #f1f1f1;
-    --darkgray: #d9d9d9
+    --darkgray: #d9d9d9;
+    --bodytextsize: 0.9rem;
 }
 
 body {
@@ -56,7 +57,7 @@ h1 {
 }
 
 h2 {
-    font-size: 0.9rem;
+    font-size: var(--bodytextsize);;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -113,7 +114,7 @@ header {
     line-height: 28px;
     cursor: pointer;
     transition: all .33s ease-out;
-    font-size: 0.9rem;
+    font-size: var(--bodytextsize);;
 }
 
 .toggle+label:before {
@@ -175,7 +176,7 @@ header {
 
 
 .textbox {
-    font-size: 0.9rem;
+    font-size: var(--bodytextsize);;
     font-style: normal;
     font-weight: 400;
     line-height: 145%;
@@ -187,7 +188,7 @@ header {
 }
 
 footer {
-    font-size: 0.9rem;
+    font-size: var(--bodytextsize);;
     font-style: normal;
     font-weight: 400;
     line-height: 145%;
@@ -204,6 +205,10 @@ footer {
 }
 
 @media only screen and (max-width: 840px) {
+
+    :root {
+        --bodytextsize: 1.1rem;
+    }
 
     header {
         margin: 1rem 1rem;
